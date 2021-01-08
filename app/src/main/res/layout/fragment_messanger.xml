@@ -3,15 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@color/orange_light">
 
-    <ProgressBar
-        android:id="@+id/geoProgress"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="27dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_Messanger"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+        <ImageButton
+            android:id="@+id/btn_Psihologists"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_people" />
+
+        <ImageButton
+            android:id="@+id/btn_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_account_circle" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,4 +4,60 @@
     android:id="@+id/container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+
+
+    >
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.efimcompany.mypsychologist.feature.messages.ui.MessangerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_Messanger"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+        <ImageButton
+            android:id="@+id/btn_Psihologists"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_people" />
+
+        <ImageButton
+            android:id="@+id/btn_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/orange_neutral"
+            android:backgroundTint="@color/orange_neutral"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_account_circle" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
