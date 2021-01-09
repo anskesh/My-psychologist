@@ -7,18 +7,65 @@
     android:background="#00FFFFFF"
     tools:context=".feature.registration.ui.EnterCodeFragment">
 
+    <TextView
+        android:id="@+id/tv_header2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Введите код из SMS"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/orange_dark"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/et_Code"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/borderadius20px"
         android:inputType="number"
         android:maxLength="6"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingLeft="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/orange_dark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header2" />
+
+    <Button
+        android:id="@+id/btn_register2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/borderadius20px"
+        android:backgroundTint="@color/orange_neutral"
+        android:text="Получить код"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/et_Code" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="47dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="47dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
