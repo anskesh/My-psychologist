@@ -4,21 +4,16 @@
     android:id="@+id/container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
 
-
-    >
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.efimcompany.mypsychologist.feature.messages.ui.MessangerFragment"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dataContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/ll_menu"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_menu"/>
 
     <LinearLayout
         android:id="@+id/ll_menu"
@@ -60,4 +55,5 @@
             app:srcCompat="@drawable/ic_baseline_account_circle" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.efimcompany.mypsychologist.R
 
 
-class MessangerFragment : Fragment() {
+class MessangerFragment : Fragment(R.layout.fragment_messanger) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

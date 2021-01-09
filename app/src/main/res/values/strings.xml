@@ -2,4 +2,8 @@
     <string name="app_name">My Psychologist</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_messenger">Мой психолог</string>
+    <string name="title_psihologist">Выбрать психолога</string>
+    <string name="title_profile">Настройки профиля</string>
+
 </resources>

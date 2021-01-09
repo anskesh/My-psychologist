@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1084926926930",
+    "firebase_url": "https://my-psychologist-3750c-default-rtdb.firebaseio.com",
     "project_id": "my-psychologist-3750c",
     "storage_bucket": "my-psychologist-3750c.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1084926926930-5nho5g33tdj5jcu6b0j3di8i3odg5b8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.efimcompany.mypsychologist",
+            "certificate_hash": "e7367ee13414a2a398638be9dcf68a66bbf20fde"
+          }
+        },
         {
           "client_id": "1084926926930-tnfn9dmstg9pp3t5pja6debdkt3q7a1b.apps.googleusercontent.com",
           "client_type": 3
