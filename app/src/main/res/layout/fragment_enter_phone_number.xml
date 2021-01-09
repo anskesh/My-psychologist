@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#00DAD1CB"
     tools:context=".feature.registration.ui.EnterPhoneNumberFragment">
 
     <TextView
@@ -60,7 +60,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/et_NumberPhone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_NumberPhone" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange_light">
+    android:background="#00DAD1CB">
 
     <TextView
         android:id="@+id/textView"
