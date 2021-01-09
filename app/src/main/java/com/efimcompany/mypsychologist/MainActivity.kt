@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (AUTH.currentUser!= null){
+        if (AUTH.currentUser == null){
             replaceFragment(MessangerFragment(), false)
         }
         else{
