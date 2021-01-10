@@ -1,5 +1,6 @@
 package com.efimcompany.mypsychologist.feature.psihologist.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -8,11 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.efimcompany.mypsychologist.R
+import com.efimcompany.mypsychologist.feature.messages.ui.privateMessagesFragment
 import com.efimcompany.mypsychologist.models.CommonModel
-import com.efimcompany.mypsychologist.utilits.AppValueEventListener
-import com.efimcompany.mypsychologist.utilits.NODE_PSYCHOLOGIST
-import com.efimcompany.mypsychologist.utilits.NODE_USERS
-import com.efimcompany.mypsychologist.utilits.REF_DATABASE_ROOT
+import com.efimcompany.mypsychologist.utilits.*
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.DataSnapshot
@@ -61,6 +60,10 @@ class ListPsychologistFragment : Fragment(R.layout.fragment_list_psihologist) {
 
                     holder.name.text = contact.name
                     holder.description.text = model.description
+
+                    holder.containerView.setOnClickListener {
+                        replaceFragment(privateMessagesFragment(model.id))
+                    }
                 })
             }
         }
@@ -75,6 +78,7 @@ class ListPsychologistFragment : Fragment(R.layout.fragment_list_psihologist) {
     class PsychologistHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.tv_namePsychologist
         val description: TextView = view.tv_descriptionPsychologist
+        val containerView = view
     }
 
     override fun onPause() {

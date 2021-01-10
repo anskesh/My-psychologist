@@ -1,5 +1,6 @@
 package com.efimcompany.mypsychologist
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
@@ -12,13 +13,16 @@ import com.efimcompany.mypsychologist.utilits.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_list_psihologist.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var ACTIVITY: Activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        ACTIVITY = MainActivity()
 
         tv_headerText.text = getString(R.string.title_messenger)
     }
