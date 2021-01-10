@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/orange_neutral"
+        android:background="@drawable/borderadius20px"
+        android:backgroundTint="@color/orange_neutral"
         android:text="Выход"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,15 +22,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="80dp"
         android:text="Екатерина Задорная"
         android:textColor="@color/orange_dark"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <ImageButton
@@ -46,15 +45,16 @@
         app:srcCompat="@drawable/ic_baseline_account_circle" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/et_phone_profile"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/borderadius20px"
         android:ems="10"
-        android:hint="+7 (485) 329-39"
-        android:inputType="phone"
+        android:gravity="center"
+        android:hint="Ваше имя"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
@@ -69,18 +69,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:ems="10"
         android:background="@drawable/borderadius20px"
-        android:paddingLeft="20dp"
-        android:textSize="14sp"
-        android:paddingTop="16dp"
+        android:ems="10"
         android:hint="YourMail@mail.ru"
-        android:textColorHint="@color/orange_dark"
-        android:paddingBottom="16dp"
         android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textColorHint="@color/orange_dark"
+        android:textSize="14sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_profile"
+        tools:visibility="invisible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -99,5 +101,18 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_end="47dp" />
+
+    <Button
+        android:id="@+id/btn_save_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/borderadius20px"
+        android:backgroundTint="@color/orange_neutral"
+        android:text="Сохранить изменения"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

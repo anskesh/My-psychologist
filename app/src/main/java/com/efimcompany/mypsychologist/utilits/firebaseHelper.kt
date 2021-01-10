@@ -1,18 +1,20 @@
 package com.efimcompany.mypsychologist.utilits
 
+import com.efimcompany.mypsychologist.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 lateinit var AUTH: FirebaseAuth
+lateinit var UID: String
 lateinit var REF_DATABASE_ROOT: DatabaseReference
+lateinit var USER: User
+
+const val NODE_PSYCHOLOGIST = "psychologist_contacts"
+const val CHILD_DESCRIPTION = "description"
 
 const val NODE_USERS = "users"
 const val CHILD_ID = "id"
+const val CHILD_USER_NAME_START = "startName"
 const val CHILD_USER_NAME = "name"
 const val CHILD_PHONE = "phone"
-
-fun initFirebase(){
-    AUTH = FirebaseAuth.getInstance()
-    REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
-}

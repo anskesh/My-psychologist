@@ -45,10 +45,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    implementation 'com.firebaseui:firebase-ui-database:7.1.1'
+    implementation 'com.google.firebase:firebase-database:19.6.0'
+
     implementation "com.github.moxy-community:moxy:2.2.0"
     implementation "com.github.moxy-community:moxy-androidx:2.2.0"
     implementation "com.github.moxy-community:moxy-ktx:2.2.0"
-    implementation 'com.google.firebase:firebase-database:19.6.0'
     kapt "com.github.moxy-community:moxy-compiler:2.2.0"
 
     testImplementation 'junit:junit:4.13.1'

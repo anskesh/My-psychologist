@@ -25,15 +25,6 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
         })
     }
 
-    /*private fun enterCode(code: String){
-        val credential = PhoneAuthProvider.getCredential(id, code)
-        AUTH.signInWithCredential(credential).addOnCompleteListener{
-            if(it.isSuccessful){
-                showToast("Добро пожаловать!")
-                (activity as RegisterActivity).replaceActivity(MainActivity())
-            } else showToast(it.exception?.message.toString())
-        }
-    }*/
     private fun enterCode(code: String){
 
         val credential = PhoneAuthProvider.getCredential(id, code)
@@ -45,7 +36,8 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                 var dateMap = mutableMapOf<String, Any>()
                 dateMap[CHILD_ID] = uid
                 dateMap[CHILD_PHONE] = phoneNumber
-                dateMap[CHILD_USER_NAME] = uid
+                dateMap[CHILD_USER_NAME] = "user_${phoneNumber.substring(1)}"
+                dateMap[CHILD_USER_NAME_START] = "user_${phoneNumber.substring(1)}"
 
                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                     .addOnCompleteListener { task->

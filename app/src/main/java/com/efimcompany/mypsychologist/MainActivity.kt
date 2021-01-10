@@ -2,14 +2,17 @@ package com.efimcompany.mypsychologist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import com.efimcompany.mypsychologist.feature.messages.ui.MessangerFragment
 import com.efimcompany.mypsychologist.feature.profile.ui.ProfileFragment
-import com.efimcompany.mypsychologist.feature.psihologist.ui.ListPsihologistFragment
+import com.efimcompany.mypsychologist.feature.psihologist.ui.ListPsychologistFragment
 import com.efimcompany.mypsychologist.feature.registration.RegisterActivity
+import com.efimcompany.mypsychologist.models.User
 import com.efimcompany.mypsychologist.utilits.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_list_psihologist.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        title = getString(R.string.title_messenger)
+        tv_headerText.text = getString(R.string.title_messenger)
     }
 
     override fun onStart() {
@@ -25,37 +28,49 @@ class MainActivity : AppCompatActivity() {
 
         AUTH = FirebaseAuth.getInstance()
         REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
-        //initFirebase()
+        USER = User()
+        UID = AUTH.currentUser?.uid.toString()
 
         initFunc()
         buttonsClick()
+
+        initUser()
+    }
+
+    private fun initUser() {
+        containerBarMain.isVisible = true
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+                .addListenerForSingleValueEvent(AppValueEventListener {
+                    USER = it.getValue(User::class.java) ?: User()
+                    containerBarMain.isVisible = false
+                })
     }
 
     private fun initFunc() {
-        if (AUTH.currentUser == null){
+        if (AUTH.currentUser != null) {
             replaceFragment(MessangerFragment(), false)
-        }
-        else{
+
+        } else {
             replaceActivity(RegisterActivity())
         }
     }
 
-    private fun buttonsClick(){
+    private fun buttonsClick() {
         btn_Messanger.setOnClickListener {
-            if(title!= getString(R.string.title_messenger)){
-                title = getString(R.string.title_messenger)
+            if (tv_headerText.text != getString(R.string.title_messenger)) {
+                tv_headerText.text = getString(R.string.title_messenger)
                 replaceFragment(MessangerFragment())
             }
         }
         btn_Psihologists.setOnClickListener {
-            if(title!= getString(R.string.title_psihologist)){
-                title = getString(R.string.title_psihologist)
-                replaceFragment(ListPsihologistFragment())
+            if (tv_headerText.text != getString(R.string.title_psihologist)) {
+                tv_headerText.text = getString(R.string.title_psihologist)
+                replaceFragment(ListPsychologistFragment())
             }
         }
         btn_Profile.setOnClickListener {
-            if(title!= getString(R.string.title_profile)){
-                title = getString(R.string.title_profile)
+            if (tv_headerText.text != getString(R.string.title_profile)) {
+                tv_headerText.text = getString(R.string.title_profile)
                 replaceFragment(ProfileFragment())
             }
         }

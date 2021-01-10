@@ -7,7 +7,7 @@
     android:background="#FFFFFF">
 
     <TextView
-        android:id="@+id/tv_NamePsihologist"
+        android:id="@+id/tv_namePsychologist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_DescriptionPsihologist"
+        android:id="@+id/tv_descriptionPsychologist"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_NamePsihologist"
+        app:layout_constraintTop_toBottomOf="@id/tv_namePsychologist"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -46,7 +46,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_DescriptionPsihologist"
+        app:layout_constraintStart_toEndOf="@+id/tv_descriptionPsychologist"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

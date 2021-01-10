@@ -6,37 +6,36 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.efimcompany.mypsychologist.R
 
-fun Fragment.showToast(message:String){
-    Toast.makeText(this.context,message,Toast.LENGTH_SHORT).show()
+fun Fragment.showToast(message: String) {
+    Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
 }
 
-fun AppCompatActivity.replaceActivity(activity: AppCompatActivity){
+fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {
     val intent = Intent(this, activity::class.java)
     startActivity(intent)
     this.finish()
 }
 
-fun AppCompatActivity.replaceFragment(fragment: Fragment, addStack:Boolean = true){
-    if (addStack){
+fun AppCompatActivity.replaceFragment(fragment: Fragment, addStack: Boolean = true) {
+    if (addStack) {
         supportFragmentManager.beginTransaction()
-            .addToBackStack(null)
-            .replace(
-                R.id.dataContainer,
-                fragment
-            ).commit()
+                .addToBackStack(null)
+                .replace(
+                        R.id.dataContainer,
+                        fragment
+                ).commit()
     } else {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer,
-                fragment
-            ).commit()
+                .replace(R.id.dataContainer,
+                        fragment
+                ).commit()
     }
-
 }
 
-fun Fragment.replaceFragment(fragment: Fragment){
+fun Fragment.replaceFragment(fragment: Fragment) {
     this.fragmentManager?.beginTransaction()
-        ?.addToBackStack(null)
-        ?.replace(R.id.dataContainer,
-            fragment
-        )?.commit()
+            ?.addToBackStack(null)
+            ?.replace(R.id.dataContainer,
+                    fragment
+            )?.commit()
 }

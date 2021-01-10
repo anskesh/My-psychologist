@@ -28,10 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/borderadius20px"
-        android:hint="+7(900) 545-82 38"
-        android:paddingStart="20dp"
+        android:gravity="center"
+        android:hint="+79005458238"
         android:inputType="phone"
         android:maxLines="1"
+        android:paddingStart="20dp"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:textColorHint="@color/orange_dark"
@@ -67,6 +68,29 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="47dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerBarMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#804A4A4A"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:indeterminateTint="@color/orange_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

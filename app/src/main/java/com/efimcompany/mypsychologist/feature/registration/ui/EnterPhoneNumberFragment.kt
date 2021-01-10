@@ -1,6 +1,6 @@
 package com.efimcompany.mypsychologist.feature.registration.ui
 
-import android.util.Log
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.efimcompany.mypsychologist.MainActivity
 import com.efimcompany.mypsychologist.R
@@ -53,6 +53,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             showToast("Введите номер телефона")
         }
         else{
+            containerBarMain.isVisible=true
             authUser()
         }
     }
