@@ -6,18 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.efimcompany.mypsychologist.R
 import com.efimcompany.mypsychologist.models.CommonModel
-import com.efimcompany.mypsychologist.utilits.DiffUtilCalback
 import com.efimcompany.mypsychologist.utilits.USER
 import kotlinx.android.synthetic.main.item_message.view.*
 
 class PrivateMessageAdapter : RecyclerView.Adapter<PrivateMessageAdapter.PrivateMessageHolder>() {
 
     var mListMessagesCache = emptyList<CommonModel>()
-    private lateinit var mDiffResult: DiffUtil.DiffResult
 
     class PrivateMessageHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -50,9 +47,8 @@ class PrivateMessageAdapter : RecyclerView.Adapter<PrivateMessageAdapter.Private
     override fun getItemCount(): Int = mListMessagesCache.size
 
     fun setList(list: List<CommonModel>){
-        mDiffResult = DiffUtil.calculateDiff(DiffUtilCalback(mListMessagesCache, list))
-        mDiffResult.dispatchUpdatesTo(this)
         mListMessagesCache = list
+        notifyDataSetChanged()
     }
 }
 
