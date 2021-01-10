@@ -11,6 +11,5 @@ data class CommonModel(
     var text: String = "",
     var type: String = "",
     var from: String = "",
-    var timestamp: String = "",
-    var statusSMS: Boolean = true
+    var timeStamp: Any = ""
 )

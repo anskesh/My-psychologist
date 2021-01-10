@@ -8,13 +8,14 @@
     tools:context=".feature.registration.RegisterActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_private_message"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        tools:listitem="@layout/fragment_message_from_messages"/>
+        tools:listitem="@layout/message_item"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -51,7 +52,7 @@
             app:tint="@color/white" />
 
         <TextView
-            android:id="@+id/tv_headerText2"
+            android:id="@+id/tv_headerNameUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -76,25 +77,25 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/et_SMS"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@color/orange_neutral"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:paddingStart="30dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Сообщение"
+            android:hint="Сообщение"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintEnd_toStartOf="@+id/btn_enter_SMS"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btn_enter_SMS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

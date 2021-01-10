@@ -11,15 +11,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/cl_interlocutor_messange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
             android:layout_weight="1"
-            android:background="@drawable/borderadius20px"
-            android:layout_marginStart="16dp">
+            android:background="@drawable/borderadius20px">
 
             <TextView
                 android:id="@+id/tv_NamePsihologistMessageText"
@@ -38,12 +42,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_user_messange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
             android:layout_weight="1"
             android:background="@drawable/borderadius20px"
-            android:backgroundTint="@color/orange_neutral"
-            android:layout_marginEnd="16dp">
+            android:backgroundTint="@color/orange_neutral">
 
             <TextView
                 android:id="@+id/tv_UserMessageText"
@@ -53,13 +58,13 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                tools:text="Здравствуйте, я ваш ручной психолог, меня зовут Психолог, давайте общаться"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Здравствуйте, я ваш ручной психолог, меня зовут Психолог, давайте общаться" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

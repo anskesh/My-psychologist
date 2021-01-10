@@ -1,6 +1,5 @@
 package com.efimcompany.mypsychologist.feature.psihologist.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -9,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.efimcompany.mypsychologist.R
-import com.efimcompany.mypsychologist.feature.messages.ui.privateMessagesFragment
+import com.efimcompany.mypsychologist.feature.messages.ui.PrivateMessagesFragment
 import com.efimcompany.mypsychologist.models.CommonModel
 import com.efimcompany.mypsychologist.utilits.*
 import com.firebase.ui.database.FirebaseRecyclerAdapter
@@ -62,7 +61,7 @@ class ListPsychologistFragment : Fragment(R.layout.fragment_list_psihologist) {
                     holder.description.text = model.description
 
                     holder.containerView.setOnClickListener {
-                        replaceFragment(privateMessagesFragment(model.id))
+                        replaceFragment(PrivateMessagesFragment(contact))
                     }
                 })
             }
@@ -87,5 +86,5 @@ class ListPsychologistFragment : Fragment(R.layout.fragment_list_psihologist) {
     }
 }
 
-private fun DataSnapshot.getCommonModel(): CommonModel =
+fun DataSnapshot.getCommonModel(): CommonModel =
     this.getValue(CommonModel::class.java) ?: CommonModel()

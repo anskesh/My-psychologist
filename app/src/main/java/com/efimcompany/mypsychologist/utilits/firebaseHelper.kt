@@ -11,10 +11,12 @@ lateinit var REF_DATABASE_ROOT: DatabaseReference
 lateinit var USER: User
 
 const val NODE_PSYCHOLOGIST = "psychologist_contacts"
-const val CHILD_DESCRIPTION = "description"
+const val NODE_USERS = "users"
+const val NODE_MESSAGES = "messages"
+
 const val TYPE_TEXT = "text"
 
-const val NODE_USERS = "users"
+const val CHILD_DESCRIPTION = "description"
 const val CHILD_ID = "id"
 const val CHILD_USER_NAME_START = "startName"
 const val CHILD_USER_NAME = "name"

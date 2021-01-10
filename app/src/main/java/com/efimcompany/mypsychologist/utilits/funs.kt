@@ -5,6 +5,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.efimcompany.mypsychologist.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun Fragment.showToast(message: String) {
     Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
@@ -39,3 +41,9 @@ fun Fragment.replaceFragment(fragment: Fragment) {
                     fragment
             )?.commit()
 }
+
+/*fun String.asTime(): String {
+    val time = Date(this.toLong())
+    val timeFormat = SimpleDateFormat("HH:MM", Locale.getDefault())
+    return timeFormat.format(time)
+}*/

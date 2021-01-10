@@ -1,14 +1,10 @@
 package com.efimcompany.mypsychologist.feature.messages.ui
 
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.efimcompany.mypsychologist.R
-import com.efimcompany.mypsychologist.utilits.showToast
 
 
 class MessangerFragment : Fragment(R.layout.fragment_messanger) {
@@ -16,6 +12,10 @@ class MessangerFragment : Fragment(R.layout.fragment_messanger) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initListener()
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     private fun initListener() {

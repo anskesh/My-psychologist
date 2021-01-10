@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var ACTIVITY: Activity
+    private var isActivate = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        linearLayout.isVisible = true
+        tv_headerText.text = getString(R.string.title_messenger)
 
         AUTH = FirebaseAuth.getInstance()
         REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
@@ -43,17 +47,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUser() {
         containerBarMain.isVisible = true
+        isActivate = false
         REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
-                .addListenerForSingleValueEvent(AppValueEventListener {
-                    USER = it.getValue(User::class.java) ?: User()
-                    containerBarMain.isVisible = false
-                })
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                USER = it.getValue(User::class.java) ?: User()
+                containerBarMain.isVisible = false
+                isActivate = true
+            })
     }
 
     private fun initFunc() {
         if (AUTH.currentUser != null) {
             replaceFragment(MessangerFragment(), false)
-
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -61,21 +66,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun buttonsClick() {
         btn_Messanger.setOnClickListener {
-            if (tv_headerText.text != getString(R.string.title_messenger)) {
+            if (tv_headerText.text != getString(R.string.title_messenger) && isActivate) {
                 tv_headerText.text = getString(R.string.title_messenger)
                 replaceFragment(MessangerFragment())
+                linearLayout.isVisible = true
             }
         }
         btn_Psihologists.setOnClickListener {
-            if (tv_headerText.text != getString(R.string.title_psihologist)) {
+            if (tv_headerText.text != getString(R.string.title_psihologist) && isActivate) {
                 tv_headerText.text = getString(R.string.title_psihologist)
                 replaceFragment(ListPsychologistFragment())
+                linearLayout.isVisible = true
             }
         }
         btn_Profile.setOnClickListener {
-            if (tv_headerText.text != getString(R.string.title_profile)) {
+            if (tv_headerText.text != getString(R.string.title_profile) && isActivate) {
                 tv_headerText.text = getString(R.string.title_profile)
                 replaceFragment(ProfileFragment())
+                linearLayout.isVisible = true
             }
         }
     }
